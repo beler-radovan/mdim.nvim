@@ -20,6 +20,7 @@ M.compile = function()
     if config.get_template() ~= nil then
         command = command .. "--template " .. config.get_template() .. " "
     end
+    command = command .. "--listing "
     command = command .. md_path .. " "
     command = command .. "-o "
     command = command .. pdf_path .. " "
