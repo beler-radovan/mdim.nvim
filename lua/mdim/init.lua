@@ -37,15 +37,17 @@ local compile = function()
     os.execute("pandoc -f markdown -t pdf " .. md_path .. " -o " .. pdf_path .. " 2>/dev/null &")
 end
 
-local set_autocommands = function()
+local create_autocommands = function()
     vim.api.nvim_buf_create_user_command(0, "MdCompile", compile, {})
+
+    vim.api.nvim_create_autocmd("BufWritePost", { command = "MdCompile", })
 end
 
 M.init = function()
     if vim.bo.filetype ~= "markdown" then
         return
     end
-    set_autocommands()
+    create_autocommands()
     start_preview()
 end
 
