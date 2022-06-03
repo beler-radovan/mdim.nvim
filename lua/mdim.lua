@@ -3,12 +3,7 @@ local pdf = require("pdf")
 local config = require("config")
 
 M.setup = function(args)
-    if type(args) ~= "table" then
-        return
-    end
-
-    config.viewer = args.viewer
-    config.template = args.tempate
+    config.setup(args)
 end
 
 local create_autocommands = function()
