@@ -3,11 +3,11 @@ local utils = require("utils")
 local config = require("config")
 
 M.start_preview = function()
-    if config.viewer == "" then
+    if config.get_viewer() == nil then
         return
     end
     local _, pdf_path = utils.get_path()
-    os.execute("evince" .. " " .. pdf_path .. " 2>/dev/null &")
+    os.execute(config.get_viewer() .. " " .. pdf_path .. " 2>/dev/null &")
 end
 
 M.document_compiled = function()

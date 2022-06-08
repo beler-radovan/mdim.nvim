@@ -5,20 +5,16 @@ M.config = {
     template = "",
 }
 
-M.setup = function(args)
-    if type(args) ~= "table" then
-        return
-    end
-
-    for key, _ in pairs(args) do
-        if args[key] ~= nil then
-            M.config[key] = args[key]
-        end
-    end
+M.set_viewer = function(viewer)
+    M.config.viewer = viewer
 end
 
 M.get_viewer = function()
     return M.config.viewer
+end
+
+M.set_template = function(template)
+    M.config.template = template
 end
 
 M.get_template = function()

@@ -1,21 +1,8 @@
 local M = {}
-local pdf = require("pdf")
-local config = require("config")
+local setup = require("setup")
 
 M.setup = function(args)
-    config.setup(args)
-end
-
-M.init = function()
-    if vim.bo.filetype ~= "markdown" then
-        return
-    end
-
-    -- Initialize commands and autocommands
-    require("commands")
-
-    pdf.compile(false)
-    pdf.start_preview()
+    setup.setup(args)
 end
 
 return M
