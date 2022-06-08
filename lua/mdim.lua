@@ -11,6 +11,10 @@ M.init = function()
         return
     end
 
+    -- Initialize commands and autocommands
+    require("commands")
+
+    pdf.compile(false)
     pdf.start_preview()
 end
 
