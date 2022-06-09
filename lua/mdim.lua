@@ -8,7 +8,6 @@ M.init = function()
     end
 
     require("commands")
-
     pdf.compile(false)
     pdf.start_preview()
 end

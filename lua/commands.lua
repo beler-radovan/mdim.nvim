@@ -11,7 +11,6 @@ local exec = function(opts)
     if command == nil then
         return
     end
-
     command()
 end
 
