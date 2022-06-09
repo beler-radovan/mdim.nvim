@@ -33,11 +33,14 @@ M.compile = function(in_background)
     command = command .. "-o "
     command = command .. pdf_path .. " "
     command = command .. "2>/dev/null "
+    -- command = command .. "2>&1 "
     if in_background then
         command = command .. "&"
     end
 
     os.execute(command)
+    -- local output = io.popen(command, "r"):read("*a")
+    -- print(output)
 end
 
 return M
