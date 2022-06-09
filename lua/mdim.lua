@@ -19,6 +19,7 @@ M.setup = function(args)
 
     config.set_viewer(args.viewer)
     config.set_template(args.template)
+    config.set_autocompile(args.autocompile)
 end
 
 return M
